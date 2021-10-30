@@ -8,10 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Getter @Setter // 새터는 필요한 경우에만 선택적으로 사용하자.
+@Getter
+@Setter // 새터는 필요한 경우에만 선택적으로 사용하자.
 public class Member {
     @Column(name = "member_id")
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
 
     private String name;
