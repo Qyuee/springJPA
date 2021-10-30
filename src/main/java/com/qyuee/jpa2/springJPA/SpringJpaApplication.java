@@ -8,9 +8,6 @@ public class SpringJpaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringJpaApplication.class, args);
-		Hello hello = new Hello();
-		hello.setName("name");
-		System.out.println("hello = " + hello.getName());
 	}
 
 }

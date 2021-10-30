@@ -14,9 +14,9 @@ class MemberRepositoryTest {
     @Autowired MemberRepository memberRepository;
 
     @Test
-    @Transactional
-    @Rollback(value = false)
-    public void testMember() {
+    @Transactional  // 테스트가 끝난 뒤, 롤백됨   
+    @Rollback(value = false)    // 롤백 방지
+    public void testMember() throws Exception {
         Member member = new Member();
         member.setUsername("memberA");
         Long saveId = memberRepository.save(member);
