@@ -1,0 +1,24 @@
+# 테스트를 완전히 격리된 환경에서 할 수 있도록 제공해준다.
+# 테스트를 실행하면 test.resources내의 yml을 우선적으로 사용하도록 설정되어 있다.
+# h2를 인메모리 모드로 구동하여 사용
+# 즉, 인메모리 모드로 구성된 h2에 테이블을 생성하고 테스트를 진행한다. -> 로컬환경에서 테스트 용도로 사용하면 좋을 듯
+spring:
+  datasource:
+    url: jdbc:h2:mem:test
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+
+  devtools:
+    restart:
+      enabled: false
+
+logging.level:
+  org.hibernate.SQL: debug
